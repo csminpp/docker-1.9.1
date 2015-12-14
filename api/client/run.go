@@ -57,6 +57,14 @@ func (cli *DockerCli) CmdRun(args ...string) error {
 	)
 
 	config, hostConfig, cmd, err := runconfig.Parse(cmd, args)
+	
+	fmt.Print("config: ")
+	fmt.Println(config)
+	fmt.Print("hostConfig: ")
+	fmt.Println(hostConfig)
+	fmt.Print("cmd: ")
+	fmt.Println(cmd)
+	
 	// just in case the Parse does not exit
 	if err != nil {
 		cmd.ReportError(err.Error(), true)
